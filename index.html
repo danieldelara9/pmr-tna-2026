@@ -388,6 +388,66 @@
   }
   .footer strong { color: var(--gold); }
 
+  /* ── ABSTRACT ── */
+  .abstract-section {
+    background: var(--white);
+    border-bottom: 3px solid var(--gold);
+  }
+  .abstract-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 32px 20px 36px;
+  }
+  .abstract-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .abstract-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--grey-light);
+  }
+  .abstract-block { margin-bottom: 20px; }
+  .abstract-block:last-child { margin-bottom: 0; }
+  .abstract-block-heading {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--grey-mid);
+    margin-bottom: 6px;
+  }
+  .abstract-block p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--charcoal);
+    font-weight: 300;
+  }
+  .abstract-block p strong { font-weight: 500; color: var(--black); }
+  .conditions-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 10px;
+  }
+  .condition-pill {
+    background: var(--grey-pale);
+    border: 1px solid var(--grey-light);
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--charcoal);
+    padding: 4px 12px;
+  }
+
   /* ── SCROLLBAR ── */
   ::-webkit-scrollbar { width: 4px; }
   ::-webkit-scrollbar-track { background: var(--grey-pale); }
@@ -428,6 +488,36 @@
     </div>
   </div>
 </div>
+
+<!-- ABSTRACT -->
+<div class="abstract-section">
+  <div class="abstract-inner">
+    <div class="abstract-label">About This Project</div>
+
+    <div class="abstract-block">
+      <div class="abstract-block-heading">Background</div>
+      <p>Physical Medicine &amp; Rehabilitation (PM&amp;R) physicians are uniquely positioned to bridge a clinically significant gap: the delay between an outpatient clinic visit and the start of formal physical therapy (PT). Insurance authorizations, scheduling backlogs, and access barriers mean patients often wait weeks before receiving structured exercise instruction — a window where early therapeutic movement has documented benefit. Despite this, <strong>no formal curriculum exists in most PM&amp;R residency programs</strong> to train residents in brief, point-of-care exercise instruction.</p>
+    </div>
+
+    <div class="abstract-block">
+      <div class="abstract-block-heading">Purpose</div>
+      <p>This project uses the <strong>Kern Six-Step Method</strong> <em>(a validated framework for building evidence-based medical school and residency curricula)</em> to design, implement, and evaluate a novel interprofessional workshop in which PM&amp;R residents learn to deliver condition-specific exercise instruction alongside physical therapist co-teachers. This PT-physician co-teaching model is a core feature of the curriculum, <strong>positioning physical therapists as active clinical educators and curriculum partners</strong>. The five target conditions are:</p>
+      <div class="conditions-list">
+        <span class="condition-pill">Rotator cuff tendinopathy</span>
+        <span class="condition-pill">Knee osteoarthritis</span>
+        <span class="condition-pill">Lumbar radiculopathy</span>
+        <span class="condition-pill">LBP due to spinal stenosis</span>
+        <span class="condition-pill">Cervicalgia</span>
+      </div>
+    </div>
+
+    <div class="abstract-block">
+      <div class="abstract-block-heading">This Page</div>
+      <p>The data presented here represent <strong>Step 2</strong> of the Kern process: a Targeted Needs Assessment (TNA) survey administered to all PM&amp;R residents (PGY-2 through PGY-4) at the University of Colorado Anschutz Medical Campus in May 2026. The survey measured baseline knowledge, clinical teaching self-efficacy, attitudes toward point-of-care exercise instruction, and barriers to current practice. Results directly inform <strong>Step 3</strong> (learning objectives) and <strong>Step 4</strong> (workshop design).</p>
+    </div>
+  </div>
+</div>
+
 
 <div class="page">
 
@@ -739,7 +829,7 @@ const q6Data = [
   {cond:'Rotator cuff tendinopathy', counts:[2,7,6,0,1], mean:2.44},
   {cond:'Knee osteoarthritis', counts:[2,4,7,2,1], mean:2.75},
   {cond:'Lumbar radiculopathy', counts:[3,4,4,4,1], mean:2.75},
-  {cond:'Spinal stenosis LBP', counts:[6,5,2,2,1], mean:2.19},
+  {cond:'LBP due to spinal stenosis', counts:[6,5,2,2,1], mean:2.19},
   {cond:'Cervicalgia', counts:[3,8,3,1,1], mean:2.31},
 ];
 function heatColor(val) {
@@ -874,7 +964,7 @@ makeBar('q14-bars', [
 // ══════════════════════════════════════════
 const q15Data = [
   {label:'Select exercise: rotator cuff', mean:4.50, type:'condition'},
-  {label:'Select exercise: spinal stenosis', mean:4.12, type:'condition'},
+  {label:'Select exercise: spinal stenosis LBP', mean:4.12, type:'condition'},
   {label:'Select exercise: cervicalgia', mean:4.50, type:'condition'},
   {label:'Select exercise: lumbar radiculopathy', mean:4.69, type:'condition'},
   {label:'Select exercise: knee OA', mean:5.25, type:'condition'},
